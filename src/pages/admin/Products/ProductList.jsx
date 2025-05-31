@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./product-management.css";
+import "./ProductList.css";
 
 const ProductManagement = () => {
   return (
@@ -17,6 +17,7 @@ const ProductManagement = () => {
             <tr>
               <th>#</th>
               <th>Tên sản phẩm</th>
+              <th>Hình ảnh</th>
               <th>Giá</th>
               <th>Thương hiệu</th>
               <th>Tồn kho</th>
@@ -24,38 +25,58 @@ const ProductManagement = () => {
             </tr>
           </thead>
           <tbody>
-            {/* Dữ liệu giả - sẽ thay bằng map() từ API */}
             <tr>
               <td>1</td>
               <td className="text-start">Đồng hồ Casio MTP-V002</td>
+              <td>
+                <img
+                  src="https://res.cloudinary.com/dovmddijy/image/upload/v1745405130/vinoycnt3tmtzeh061tb.avif"
+                  alt="Product"
+                  width="60"
+                  height="60"
+                  style={{ objectFit: "cover", borderRadius: "4px" }}
+                />
+              </td>
               <td>1.500.000₫</td>
               <td>Casio</td>
               <td>24</td>
               <td>
+                <Link to="/admin/products/1" className="btn btn-sm btn-outline-info me-2">
+                  Chi tiết
+                </Link>
                 <Link to="/admin/products/1/edit" className="btn btn-sm btn-outline-warning me-2">
                   Sửa
                 </Link>
-                <button className="btn btn-sm btn-outline-danger">
-                  Xóa
-                </button>
+                <button className="btn btn-sm btn-outline-danger">Xóa</button>
               </td>
             </tr>
             <tr>
               <td>2</td>
               <td className="text-start">Đồng hồ Seiko SNK809</td>
+              <td>
+                <img
+                  src="https://res.cloudinary.com/dovmddijy/image/upload/v1745405130/vinoycnt3tmtzeh061tb.avif"
+                  alt="Product"
+                  width="60"
+                  height="60"
+                  style={{ objectFit: "cover", borderRadius: "4px" }}
+                />
+              </td>
               <td>2.990.000₫</td>
               <td>Seiko</td>
               <td>10</td>
               <td>
+                <Link to="/admin/products/2" className="btn btn-sm btn-outline-info me-2">
+                  Chi tiết
+                </Link>
                 <Link to="/admin/products/2/edit" className="btn btn-sm btn-outline-warning me-2">
                   Sửa
                 </Link>
-                <button className="btn btn-sm btn-outline-danger">
-                  Xóa
-                </button>
+                <button className="btn btn-sm btn-outline-danger">Xóa</button>
               </td>
             </tr>
           </tbody>
+
         </table>
       </div>
     </div>
