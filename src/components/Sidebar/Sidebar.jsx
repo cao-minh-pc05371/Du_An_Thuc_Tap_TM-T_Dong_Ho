@@ -1,158 +1,150 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import "./Sidebar.css"; // Assuming you have a CSS file for styling
 
 const Sidebar = () => {
   const location = useLocation();
-  const [openMenu, setOpenMenu] = useState({
-    product: false,
-    user: false,
-    brand: false,
-    category: false,
-  });
-
-  const toggleMenu = (menu) => {
-    setOpenMenu((prev) => ({ ...prev, [menu]: !prev[menu] }));
-  };
-
   const isActive = (path) => location.pathname.startsWith(path);
 
   return (
-    <div
-      className="d-flex flex-column bg-white border-end vh-100 px-3 py-4"
-      style={{ width: "260px" }}
-    >
-      <Link to="/" className="d-flex align-items-center mb-4 text-decoration-none">
-        <span className="fs-4 fw-bold text-primary">WatchStore Admin</span>
-      </Link>
+    <div className="d-flex flex-column bg-white border-end vh-100 p-3" style={{ width: "260px" }}>
+      <h4 className="mb-4">
+        <span className="badge bg-dark me-2"> Quản lý hệ thống</span>
+      </h4>
 
-      <ul className="nav nav-pills flex-column mb-auto gap-1">
-        <li className="nav-item">
-          <Link to="/admin" className={`nav-link ${location.pathname === "/admin" ? "active" : "text-dark"}`}>
-            Dashboard
-          </Link>
-        </li>
-
+      <div className="accordion" id="sidebarAccordion">
         {/* Quản lý sản phẩm */}
-        <li>
-          <button
-            onClick={() => toggleMenu("product")}
-            className="nav-link btn btn-link text-start text-dark w-100 px-0"
-          >
-            Quản lý sản phẩm ▾
-          </button>
-          {openMenu.product && (
-            <ul className="list-unstyled ps-3">
-              <li>
-                <Link to="/admin/products" className={`nav-link text-dark small ${isActive("/admin/products") ? "fw-bold" : ""}`}>
-                  Danh sách sản phẩm
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/products/create" className={`nav-link text-dark small ${isActive("/admin/products/create") ? "fw-bold" : ""}`}>
-                  Thêm sản phẩm
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
+        <div className="accordion-item border-0">
+          <h2 className="accordion-header">
+            <button
+              className="accordion-button collapsed bg-white text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseProduct"
+            >
+              Quản lý sản phẩm
+            </button>
+          </h2>
+          <div id="collapseProduct" className="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+            <div className="accordion-body py-1">
+              <ul className="nav flex-column ms-3 small">
+                <li><Link to="/admin/products" className={`nav-link ${isActive("/admin/products") ? "fw-bold text-primary" : ""}`}>Danh sách sản phẩm</Link></li>
+                <li><Link to="/admin/products/create" className={`nav-link ${isActive("/admin/products/create") ? "fw-bold text-primary" : ""}`}>Thêm sản phẩm</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         {/* Quản lý thương hiệu */}
-        <li>
-          <button
-            onClick={() => toggleMenu("brand")}
-            className="nav-link btn btn-link text-start text-dark w-100 px-0"
-          >
-            Quản lý thương hiệu ▾
-          </button>
-          {openMenu.brand && (
-            <ul className="list-unstyled ps-3">
-              <li>
-                <Link to="/admin/brands" className={`nav-link text-dark small ${isActive("/admin/brands") ? "fw-bold" : ""}`}>
-                  Danh sách thương hiệu
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/brands/create" className={`nav-link text-dark small ${isActive("/admin/brands/create") ? "fw-bold" : ""}`}>
-                  Thêm thương hiệu
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
+        <div className="accordion-item border-0">
+          <h2 className="accordion-header">
+            <button
+              className="accordion-button collapsed bg-white text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseBrand"
+            >
+              Quản lý thương hiệu
+            </button>
+          </h2>
+          <div id="collapseBrand" className="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+            <div className="accordion-body py-1">
+              <ul className="nav flex-column ms-3 small">
+                <li><Link to="/admin/brands" className={`nav-link ${isActive("/admin/brands") ? "fw-bold text-primary" : ""}`}>Danh sách thương hiệu</Link></li>
+                <li><Link to="/admin/brands/create" className={`nav-link ${isActive("/admin/brands/create") ? "fw-bold text-primary" : ""}`}>Thêm thương hiệu</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         {/* Quản lý danh mục */}
-        <li>
-          <button
-            onClick={() => toggleMenu("category")}
-            className="nav-link btn btn-link text-start text-dark w-100 px-0"
-          >
-            Quản lý danh mục ▾
-          </button>
-          {openMenu.category && (
-            <ul className="list-unstyled ps-3">
-              <li>
-                <Link to="/admin/categories" className={`nav-link text-dark small ${isActive("/admin/categories") ? "fw-bold" : ""}`}>
-                  Danh sách danh mục
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/categories/create" className={`nav-link text-dark small ${isActive("/admin/categories/create") ? "fw-bold" : ""}`}>
-                  Thêm danh mục
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
+        <div className="accordion-item border-0">
+          <h2 className="accordion-header">
+            <button
+              className="accordion-button collapsed bg-white text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseCategory"
+            >
+              Quản lý danh mục
+            </button>
+          </h2>
+          <div id="collapseCategory" className="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+            <div className="accordion-body py-1">
+              <ul className="nav flex-column ms-3 small">
+                <li><Link to="/admin/categories" className={`nav-link ${isActive("/admin/categories") ? "fw-bold text-primary" : ""}`}>Danh sách danh mục</Link></li>
+                <li><Link to="/admin/categories/create" className={`nav-link ${isActive("/admin/categories/create") ? "fw-bold text-primary" : ""}`}>Thêm danh mục</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         {/* Quản lý người dùng */}
-        <li>
-          <button
-            onClick={() => toggleMenu("user")}
-            className="nav-link btn btn-link text-start text-dark w-100 px-0"
-          >
-            Quản lý người dùng ▾
-          </button>
-          {openMenu.user && (
-            <ul className="list-unstyled ps-3">
-              <li>
-                <Link to="/admin/users" className={`nav-link text-dark small ${isActive("/admin/users") ? "fw-bold" : ""}`}>
-                  Danh sách người dùng
-                </Link>
-              </li>
-              <li>
-                <Link to="/admin/users/create" className={`nav-link text-dark small ${isActive("/admin/users/create") ? "fw-bold" : ""}`}>
-                  Thêm người dùng
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
+        <div className="accordion-item border-0">
+          <h2 className="accordion-header">
+            <button
+              className="accordion-button collapsed bg-white text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseUser"
+            >
+              Quản lý người dùng
+            </button>
+          </h2>
+          <div id="collapseUser" className="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+            <div className="accordion-body py-1">
+              <ul className="nav flex-column ms-3 small">
+                <li><Link to="/admin/users" className={`nav-link ${isActive("/admin/users") ? "fw-bold text-primary" : ""}`}>Danh sách người dùng</Link></li>
+                <li><Link to="/admin/users/create" className={`nav-link ${isActive("/admin/users/create") ? "fw-bold text-primary" : ""}`}>Thêm người dùng</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-        {/* Các mục khác */}
-        <li>
-          <Link to="/admin/orders" className={`nav-link ${isActive("/admin/orders") ? "active" : "text-dark"}`}>
-            Quản lý đơn hàng
-          </Link>
-        </li>
+        {/* Đơn hàng, đánh giá, blog, cài đặt */}
+        <ul className="nav flex-column mt-3 small">
+          <li>
+            <Link
+              to="/admin"
+              className={`nav-link ${isActive("/admin") ? "fw-bold text-primary" : "text-dark"}`}
+            >
+              Thống kê
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/admin/orders"
+              className={`nav-link ${isActive("/admin/orders") ? "fw-bold text-primary" : "text-dark"}`}
+            >
+              Quản lý đơn hàng
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/admin/reviews"
+              className={`nav-link ${isActive("/admin/reviews") ? "fw-bold text-primary" : "text-dark"}`}
+            >
+              Quản lý đánh giá
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/admin/blogs"
+              className={`nav-link ${isActive("/admin/blogs") ? "fw-bold text-primary" : "text-dark"}`}
+            >
+              Quản lý blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/admin/settings"
+              className={`nav-link ${isActive("/admin/settings") ? "fw-bold text-primary" : "text-dark"}`}
+            >
+              Cài đặt hệ thống
+            </Link>
+          </li>
+        </ul>
 
-        <li>
-          <Link to="/admin/reviews" className={`nav-link ${isActive("/admin/reviews") ? "active" : "text-dark"}`}>
-            Quản lý đánh giá
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/admin/blogs" className={`nav-link ${isActive("/admin/blogs") ? "active" : "text-dark"}`}>
-            Quản lý blog
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/admin/settings" className={`nav-link ${isActive("/admin/settings") ? "active" : "text-dark"}`}>
-            Cài đặt hệ thống
-          </Link>
-        </li>
-      </ul>
+      </div>
 
       <hr />
 

@@ -9,7 +9,7 @@ import Contact from "./pages/client/Contact";
 
 // Admin Pages
 import Dashboard from "./pages/admin/Dashboard";
-import ProductManagement from "./pages/admin/ProductManagement";
+import ProductManagement from "./pages/admin/ProductManagement/ProductManagement";
 import UserManagement from "./pages/admin/UserManagement";
 
 function App() {
