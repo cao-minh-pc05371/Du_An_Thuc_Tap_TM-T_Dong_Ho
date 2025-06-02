@@ -135,6 +135,12 @@ const ProductDetail = () => {
                                         <td>
                                             <Link
                                                 to={`/admin/products/${product.id}/variants/${v.id}/edit`}
+                                                className="btn btn-sm btn-outline-info me-2"
+                                            >
+                                                Thêm số lượng
+                                            </Link>
+                                            <Link
+                                                to={`/admin/products/${product.id}/variants/${v.id}/edit`}
                                                 className="btn btn-sm btn-outline-warning me-2"
                                             >
                                                 Sửa

@@ -11,7 +11,7 @@ import Contact from "./pages/client/Contact";
 // Admin Pages
 import Dashboard from "./pages/admin/Dashboard/Dashboard";
 import ProductManagement from "./pages/admin/Products/ProductList";
-import UserManagement from "./pages/admin/Users/UserList";
+import UserList from "./pages/admin/Users/UserList";
 import CategoryCreate from "./pages/admin/Categories/CategoryCreate";
 import CategoryList from "./pages/admin/Categories/CategoryList";
 import BrandList from "./pages/admin/Brands/BrandsList";
@@ -34,7 +34,7 @@ function App() {
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="products" element={<ProductManagement />} />
-          <Route path="users" element={<UserManagement />} />
+          <Route path="users" element={<UserList />} />
           <Route path="categories" element={<CategoryList />} />
           <Route path="categories/create" element={<CategoryCreate />} />
           <Route path="brands" element={<BrandList />} />
