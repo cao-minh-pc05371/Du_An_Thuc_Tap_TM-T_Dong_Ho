@@ -1,19 +1,17 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import '@/scss/Client/index.scss';
-import { FaShoppingCart } from 'react-icons/fa';
-
-<FaShoppingCart size={24} />
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import '@/assets/scss/Client/index.scss';
+import '../assets/scss/Client/index.css';
 const ClientLayout = () => (
-    <div className="d-flex flex-column min-vh-100">
+    <>
         <Header />
-        <main className="flex-fill">
-            <Outlet />
-        </main>
+        <ToastContainer />
+        <Outlet />
         <Footer />
-    </div>
+    </>
 );
 
 export default ClientLayout;
