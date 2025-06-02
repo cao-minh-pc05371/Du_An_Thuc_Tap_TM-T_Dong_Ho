@@ -2,45 +2,61 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light pt-5 pb-3 mt-5">
-      <div className="container">
-        <div className="row gy-4">
+    <footer className="col-10 m-auto">
+      <div className="footer_top">
+        <div className="footer_top_icon">
+          <img src="../../../../public/image/icon/icon_footer_1.svg" alt="" width="100px" />
+          <p>Thanh toán khi nhận hàng</p>
+        </div>
+        <div className="footer_top_icon">
+          <img src="../../../../public/image/icon/icon_footer_2.svg" alt="" width="140px" />
+          <p>Giao hàng nhanh miễn phí</p>
+        </div>
+        <div className="footer_top_icon">
+          <img src="../../../../public/image/icon/icon_footer_3_200x200.png" alt="" width="100px" />
+          <p>30 ngày đổi trả miễn phí</p>
+        </div>
+        <div className="footer_top_icon">
+          <img src="../../../../public/image/icon/icon_footer_4.svg" alt="" width="100px" />
+          <p>Thương hiệu uy tín toàn cầu</p>
+        </div>
+      </div>
 
-          {/* Logo + Mô tả */}
-          <div className="col-md-4">
-            <h5 className="fw-bold text-white">WatchStore</h5>
-            <p className="text-light">
-              Chuyên cung cấp đồng hồ chính hãng, đẳng cấp và tinh tế dành cho mọi đối tượng.
-            </p>
-          </div>
-
-          {/* Liên kết nhanh */}
-          <div className="col-md-4">
-            <h5 className="fw-bold text-white">Liên kết nhanh</h5>
-            <ul className="list-unstyled">
-              <li><Link to="/" className="text-light text-decoration-none">Trang chủ</Link></li>
-              <li><Link to="/products" className="text-light text-decoration-none">Sản phẩm</Link></li>
-              <li><Link to="/category/nam" className="text-light text-decoration-none">Đồng hồ nam</Link></li>
-              <li><Link to="/category/nu" className="text-light text-decoration-none">Đồng hồ nữ</Link></li>
-              <li><Link to="/contact" className="text-light text-decoration-none">Liên hệ</Link></li>
+      <div className="footer_bottom m-auto">
+        <div className="col-8 row m-auto">
+          <div className="col-4">
+            <ul className="menu_footer">
+              <li>
+                <Link to="#" style={{ textDecoration: 'none' }}>Về Bloom</Link>
+              </li>
+              <li><Link to="#">Giới thiệu Bloom</Link></li>
+              <li><Link to="#">Tuyển Dụng</Link></li>
+              <li><Link to="#">Chính sách bảo mật</Link></li>
+              <li><Link to="#">Điều khoản sử dụng</Link></li>
+              <li><Link to="#">Liên hệ</Link></li>
             </ul>
           </div>
-
-          {/* Thông tin liên hệ */}
-          <div className="col-md-4">
-            <h5 className="fw-bold text-white">Thông tin liên hệ</h5>
-            <p className="text-light mb-1">📍 123 Đồng Hồ, Quận 1, TP.HCM</p>
-            <p className="text-light mb-1">📞 0909 123 456</p>
-            <p className="text-light mb-1">✉️ support@watchstore.vn</p>
+          <div className="col-4">
+            <ul className="menu_footer">
+              <li>
+                <Link to="#" style={{ textDecoration: 'none' }}>Hỗ trợ khách hàng</Link>
+              </li>
+              <li><Link to="#">Gửi yêu cầu hỗ trợ</Link></li>
+              <li><Link to="#">Hướng dẫn đặt hàng</Link></li>
+              <li><Link to="#">Phương thức vận chuyển</Link></li>
+              <li><Link to="#">Chính sách đổi trả</Link></li>
+            </ul>
           </div>
-        </div>
-
-        <hr className="border-light my-4" />
-
-        <div className="text-center text-light">
-          <small>
-            © {new Date().getFullYear()} <strong className="text-white">WatchStore</strong>. All rights reserved.
-          </small>
+          <div className="col-4">
+            <ul className="menu_footer">
+              <li>
+                <Link to="#" style={{ textDecoration: 'none' }}>Nước Hoa</Link>
+              </li>
+              <li><Link to="#">Nước Hoa Nữ</Link></li>
+              <li><Link to="#">Nước Hoa Nam</Link></li>
+              <li><Link to="#">Xịt Thơm Toàn Thân</Link></li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
