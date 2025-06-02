@@ -88,7 +88,7 @@ function Home() {
     if (!isDown || !sliderRef.current) return;
     e.preventDefault();
     const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // tăng tốc độ cuộn
+    const walk = (x - startX) * 2;
     sliderRef.current.scrollLeft = scrollLeftPos - walk;
   };
   return (
@@ -98,21 +98,22 @@ function Home() {
           <div className="slide col-7">
             <div className="slide_banner" id="slider1">
               <img
-                className="slide-image p-1"
+                className="slide-image h-full p-1"
                 src={slidesData.slider1[currentIndex1]}
                 alt=""
                 width="100%"
                 height="100%"
               />
-              <div className="btn_slide d-flex p-2">
+        
+            </div>  
+                {/* <div className="btn_slide d-flex p-2">
                 <button onClick={prevSlide1} className="material-symbols-outlined">
                   <ArrowBackIosIcon />
                 </button>
                 <button onClick={nextSlide1} className="material-symbols-outlined">
                   <ArrowForwardIosIcon />
-                </button>
-              </div>
-            </div>
+                </button> 
+              </div>*/}
           </div>
 
           <div className="box_img col-5">

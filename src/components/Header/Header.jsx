@@ -32,16 +32,16 @@ const Header = () => {
             </div>
 
             <div class="d-flex  align-items-center box col-6 justify-content-end ">
-              <div class="account pt-2">
+              <div class="account pt-3">
                 <a href="/View/Client/Page/login.html" class="d-flex flex-row gap-2 account_title ">
                   <p>Tài khoản</p><FaUser size={20} />
                 </a>
                 <div class="account_dropdown d-flex flex-col gap-4">
-                  <a class="Login" href="#">Đăng Nhập </a>
-                  <a href="#" class="Register"> Đăng Ký </a>
+                  <Link class="Login" to="dang-nhap">Đăng Nhập </Link>
+                  <Link to="dang-ky" class="Register"> Đăng Ký </Link>
                 </div>
               </div>
-              <a class="cart_shopping  " title="Giỏ hàng">
+              <Link to="/gio-hang" class="cart_shopping  " title="Giỏ hàng">
                 <div style={{ position: 'relative' }}>
                   <FaShoppingCart size={24} />
                   <span style={{
@@ -51,11 +51,11 @@ const Header = () => {
                     background: 'red',
                     color: 'white',
                     borderRadius: '50%',
-                    padding: '2px 6px',
+                    padding: '2px 8px',
                     fontSize: '12px'
                   }}>3</span>
                 </div>
-              </a>
+              </Link>
             </div>
 
           </div>
@@ -64,10 +64,10 @@ const Header = () => {
 
       <div class=" banner_menu_main d-flex  align-items-center">
         <ul class=" d-flex col-10  ">
-          <li><a href="/View/Client/index.html">Trang chủ</a></li>
-          <li><a href="/View/Client/Page/product.html">Sản phẩm</a></li>
-          <li><a href="/View/Client/Page/about.html">Giới thiệu </a></li>
-          <li><a href="">Liên hệ </a></li>
+          <li><Link to="/">Trang chủ</Link></li>
+          <li><Link to="/gioi-thieu">Giới thiệu</Link></li>
+          <li><Link to="/san-pham">Sản phẩm</Link></li>
+          <li><Link to="/lien-he">Liên hệ</Link></li>
         </ul>
       </div>
     </header>
