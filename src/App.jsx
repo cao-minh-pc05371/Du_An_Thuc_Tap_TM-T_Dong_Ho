@@ -13,6 +13,7 @@ import Cart from "./pages/client/Cart";
 import Login from "./pages/client/Authenticator/Login";
 import Register from "./pages/client/Authenticator/Register";
 import Password from "./pages/client/Authenticator/Register/Password";
+import Checkout from "./pages/client/Checkout";
 
 // Admin Pages
 import Dashboard from "./pages/admin/Dashboard/Dashboard";
@@ -38,6 +39,7 @@ function App() {
           <Route path="san-pham/:slug" element={<DetailProduct />} />
           <Route path="lien-he" element={<Contact />} />
           <Route path="gio-hang" element={<Cart />} />
+          <Route path="thanh-toan" element={<Checkout />} />
         </Route>
 
         <Route>

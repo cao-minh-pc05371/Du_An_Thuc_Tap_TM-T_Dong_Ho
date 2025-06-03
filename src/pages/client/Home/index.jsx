@@ -7,9 +7,9 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 const slidesData = {
   slider1: [
     "../../../../public/image/main/01pyixtjzfd0eibvn3d99o3832.jpg",
-    "../../../../public/image/main/banner-2.jpeg",
+    "../../../../public/image/main/slide1.jpg",
     "../../../../public/image/main/OIP (1).jpg",
-    "../../../../public/image/main/frasco-de-spray-de-perfume-no-banner-do-ceu-nublado_33099-2220.avif",
+    "../../../../public/image/main/TAG Heuer Aquaracer Outdoor.jpg",
   ],
   slider2: [
     "../../../../public/image/category/1bdca5d0dd3ce9c02ee514d9039b07bc.jpg",
@@ -133,11 +133,10 @@ function Home() {
           </div>
         </div>
       </section>
-
       <main className="col-10 m-auto">
         <div className="flash">
           <div className="box_title d-flex align-items-center justify-content-between p-3">
-            <h3>Flash Deals</h3>
+            <h3>Khuyến Mãi Đặc Biệt</h3>
             <Link to="">Xem tất cả</Link>
           </div>
           <div
@@ -166,11 +165,11 @@ function Home() {
                 </div>
 
                 <div className="title">
-                  <div className="price">2.566.00 đ</div>
-                  <h4 className="name_product">Narciso Rodriguez</h4>
-                  <p className="content">Nước Hoa Nữ Narciso Rodriguez For Her EDP 30ml</p>
+                  <div className="price">12.566.000 đ</div>
+                  <h4 className="name_product">Rolex Submariner</h4>
+                  <p className="content">Đồng hồ nam Rolex Submariner Date Oystersteel</p>
                 </div>
-                <div className="sale">-12%</div>
+                <div className="sale">-15%</div>
               </Link>
             ))}
           </div>
@@ -190,7 +189,7 @@ function Home() {
             <img
               className="rounded-3"
               height="100%"
-              src="../../../../public/image/main/fragrance-photography_899451-440.avif"
+              src="../../../../public/image/main/Men's watch.jpg"
               alt=""
               width="100%"
             />
@@ -217,7 +216,7 @@ function Home() {
 
         <section className="brand">
           <div className="box_title d-flex align-items-center justify-content-between">
-            <h3>Thương hiệu</h3>
+            <h3>Thương hiệu đồng hồ</h3>
             <Link to="">Xem tất cả</Link>
           </div>
           <div className="d-flex box_category justify-content-center align-items-center">
@@ -249,7 +248,7 @@ function Home() {
                       <Link to="#" className="">
                         <img src={brand.image1} alt="" width="100%" height="100%" />
                         <div className="name_brand">
-                          <h2>{brand.name1}</h2>
+                          <h2>Rolex</h2>
                         </div>
                       </Link>
                     </div>
@@ -257,7 +256,7 @@ function Home() {
                       <Link to="#" className="">
                         <img src={brand.image2} alt="" width="100%" height="100%" />
                         <div className="name_brand">
-                          <h2>{brand.name2}</h2>
+                          <h2>Omega</h2>
                         </div>
                       </Link>
                     </div>
@@ -278,7 +277,7 @@ function Home() {
 
         <section className="all_product">
           <div className="box_title d-flex align-items-center justify-content-between p-3">
-            <h3>Sản phẩm</h3>
+            <h3>Bộ sưu tập đồng hồ</h3>
             <Link to="">Xem tất cả</Link>
           </div>
 
@@ -301,11 +300,11 @@ function Home() {
 
                 <div className="title">
                   <div className="price">
-                    <span>2.566.00 đ</span>
-                    <span className="price_sales"> 2.257.080</span>
+                    <span>25.566.000 đ</span>
+                    <span className="price_sales"> 22.257.000</span>
                   </div>
-                  <h4 className="name_product">Narciso Rodriguez</h4>
-                  <p className="content">Nước Hoa Nữ Narciso Rodriguez For Her EDP 30ml</p>
+                  <h4 className="name_product">Patek Philippe</h4>
+                  <p className="content">Đồng hồ nam Patek Philippe Nautilus Automatic</p>
                 </div>
                 {product.onSale && <div className="sale">-12%</div>}
               </Link>
@@ -317,6 +316,7 @@ function Home() {
           </div>
         </section>
       </main>
+
     </>
   );
 };
