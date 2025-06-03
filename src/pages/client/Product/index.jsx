@@ -1,37 +1,36 @@
-
 import React, { useState } from 'react';
 import CardProduct from '../../../components/ProductCard';
 import styles from './index.module.css';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
+
 const Product = () => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
 
     const categories = [
-        { name: 'Cây thủy sinh', count: 12 },
-        { name: 'Cây dẽ chăm', count: 2 },
-        { name: 'Cây phong thủy', count: 5 },
-        { name: 'Cây nhiệt đới', count: 23 },
-        { name: 'Cây ôn đới', count: 11 },
-        { name: 'Cây ngoại thất', count: 3 },
-        { name: 'Cây dạng leo', count: 8 },
-        { name: 'Cây cối đặc biệt', count: 4 },
+        { name: 'Đồng hồ Thụy Sĩ', count: 12 },
+        { name: 'Đồng hồ Nhật Bản', count: 8 },
+        { name: 'Đồng hồ Thể thao', count: 15 },
+        { name: 'Đồng hồ Sang trọng', count: 10 },
+        { name: 'Đồng hồ Thông minh', count: 20 },
+        { name: 'Đồng hồ Điện tử', count: 7 },
+        { name: 'Đồng hồ Cổ điển', count: 5 },
+        { name: 'Đồng hồ Giới hạn', count: 3 },
     ];
 
     const stats = [
-        { number: '200+', name: 'Sản phẩm' },
-        { number: '40+', name: 'Thương hiệu' },
-        { number: '300+', name: 'Bình luận' },
-        { number: '1000+', name: 'Lượt truy cập' },
+        { number: '500+', name: 'Sản phẩm' },
+        { number: '50+', name: 'Thương hiệu' },
+        { number: '1000+', name: 'Bình luận' },
+        { number: '5000+', name: 'Lượt truy cập' },
     ];
 
     const products = Array(11).fill({
-        image:
-            '../../../../public/image/products/facebook-dynamic-nuoc-hoa-nu-narciso-rodriguez-for-her-edp-30ml-1711530320_img_385x385_622873_fit_center.jpg',
-        originalPrice: '2,566,000 đ',
-        salePrice: '2,257,080 đ',
-        name: 'Narciso Rodriguez',
-        description: 'Nước Hoa Nữ Narciso Rodriguez For Her EDP 30ml - Hương thơm quyến rũ, lưu hương lâu, phù hợp dùng hàng ngày hoặc đi tiệc.',
+        image: '../../../../public/image/products/facebook-dynamic-nuoc-hoa-nu-narciso-rodriguez-for-her-edp-30ml-1711530320_img_385x385_622873_fit_center.jpg',
+        originalPrice: '25,660,000 đ',
+        salePrice: '22,570,800 đ',
+        name: 'Rolex Submariner',
+        description: 'Đồng hồ nam Rolex Submariner Date Oystersteel - Thiết kế sang trọng, chống nước 300m, phù hợp mọi hoạt động từ công sở đến thể thao.',
         discount: '-12%',
     });
 
@@ -52,7 +51,7 @@ const Product = () => {
                             <p
                                 className={`text-3xl  text-orange-500 !mt-[-5%] ${styles.sloganAnimation}`}
                             >
-                                Hơi thở cuộc sống
+                                Đẳng cấp thời gian
                             </p>
                         </div>
                     </div>

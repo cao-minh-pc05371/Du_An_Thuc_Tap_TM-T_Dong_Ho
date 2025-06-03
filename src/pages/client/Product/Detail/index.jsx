@@ -1,8 +1,6 @@
-
 import React, { useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { FiPlus, FiMinus } from 'react-icons/fi';
-
 
 const DetailProduct = () => {
     const { slug } = useParams();
@@ -14,7 +12,6 @@ const DetailProduct = () => {
     const imageRef = useRef(null);
     const magnifierRef = useRef(null);
 
-
     const images = [
         '../../../../public/image/products/7ca9a3462130dd16b9d8013e7daac9a0.jpg',
         '../../../../public/image/products/83118f02689e3e63fe1b3ca941a2b1f0.jpg',
@@ -25,10 +22,10 @@ const DetailProduct = () => {
     ];
 
     const variants = [
-        'Cao 90 cm',
-        'Cao 90 cm + chậu',
-        'Cao 100 cm',
-        'Cao 100 cm + chậu',
+        '38mm - Dây da',
+        '40mm - Dây thép',
+        '42mm - Dây da',
+        '44mm - Dây thép',
     ];
 
     const handleImageChange = (src) => {
@@ -74,8 +71,6 @@ const DetailProduct = () => {
         }
     };
 
-
-
     return (
         <main className="container mx-auto py-3">
             <section className="flex !bg-white p-4 rounded  justify-between">
@@ -107,21 +102,21 @@ const DetailProduct = () => {
                     </div>
                 </aside>
                 <article className="w-1/2 px-4">
-                    <h5 className="!text-orange-600 !font-bold">Cây để bàn</h5>
+                    <h5 className="!text-orange-600 !font-bold">Đồng hồ nam</h5>
                     <h3 className="text-2xl  !text-green-900 line-clamp-2">
-                        Cây bắt ruồi Hoa diệt trùng Cỏ lồng lớn Loài ăn thịt người hoa Côn trùng chống muỗi
+                        Đồng hồ Automatic Chronograph dây da cao cấp chống nước 5ATM
                     </h3>
                     <p className="text-gray-600 mt-2">
-                        Cây bắt ruồi có khả năng bắt ruồi, kiến, là loại cây dễ trồng lại vô cùng lạ mắt. Hơn nữa,
-                        nó còn có tác dụng trong đông ý, giúp giảm một số bệnh ở người. Cùng tìm hiểu loài cây
-                        này cùng Bách hóa XANH ngay sau đây nhé!
+                        Đồng hồ với thiết kế tinh tế, mặt số Chronograph chức năng, bộ máy Automatic chính xác.
+                        Dây da cao cấp bền bỉ với thời gian, khả năng chống nước lên đến 5ATM. Phụ kiện hoàn hảo
+                        cho phong cách lịch lãm của quý ông hiện đại.
                     </p>
                     <div className="mt-4 flex flex-row font-bold gap-3">
-                        <h5 className="!text-orange-600 !font-semibold">120.000 vnđ</h5>
-                        <h5 className="!text-green-900 line-through">150.000 vnđ</h5>
+                        <h5 className="!text-orange-600 !font-semibold">4.250.000 vnđ</h5>
+                        <h5 className="!text-green-900 line-through">5.000.000 vnđ</h5>
                     </div>
                     <div className="flex flex-col mt-2">
-                        <h6 className="w-1/6 !font-semibold text-gray-700">Kích thước:</h6>
+                        <h6 className="w-1/6 !font-semibold text-gray-700">Phiên bản:</h6>
                         <div className="flex flex-wrap gap-2 max-h-[5rem] custom-scrollbar ">
                             {variants.map((variant, index) => (
                                 <button
@@ -133,7 +128,6 @@ const DetailProduct = () => {
                                 </button>
                             ))}
                         </div>
-
                     </div>
                     <div className="flex mt-3">
                         <h6 className="w-1/6 !font-bold text-gray-700">Số lượng:</h6>
@@ -173,9 +167,7 @@ const DetailProduct = () => {
                                 <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path>
                             </svg>
                             Thêm giỏ hàng
-
                         </button>
-
                     </div>
                 </article>
             </section>
@@ -184,11 +176,11 @@ const DetailProduct = () => {
                 <div>
                     <h4 className="text-xl font-semibold text-gray-700">CHI TIẾT SẢN PHẨM</h4>
                     {[
-                        { label: 'Danh mục:', value: 'Cây để bàn' },
-                        { label: 'Thương hiệu:', value: 'BLOOM' },
-                        { label: 'Loại phân bón:', value: 'Hữu cơ' },
-                        { label: 'Xuất xứ:', value: 'Đà lạt' },
-                        { label: 'Gửi từ:', value: 'Cần Thơ' },
+                        { label: 'Danh mục:', value: 'Đồng hồ nam' },
+                        { label: 'Thương hiệu:', value: 'TIMEX' },
+                        { label: 'Loại máy:', value: 'Automatic' },
+                        { label: 'Xuất xứ:', value: 'Thụy Sĩ' },
+                        { label: 'Bảo hành:', value: '5 năm' },
                     ].map((item, index) => (
                         <div key={index} className="flex mt-2">
                             <label className="w-1/6 font-semibold text-gray-700">{item.label}</label>
@@ -199,74 +191,65 @@ const DetailProduct = () => {
                 <div className="w-5/6">
                     <h4 className="text-xl font-semibold text-gray-700">MÔ TẢ SẢN PHẨM</h4>
                     <p className="text-gray-600 mt-2">
-                        Sen đá Ngọc Bích - Echeveria "Onslow" là một trong những cây sen đá quốc dân bởi vẻ đẹp
-                        và sức sống mãnh liệt. Cây có màu xanh nhạt khi đủ già và đủ nắng sẽ lên được màu vàng
-                        xanh. Onslow thích hợp trồng cả xứ lạnh và xứ nóng.
+                        Đồng hồ Automatic Chronograph TIMEX là sự kết hợp hoàn hảo giữa công nghệ Thụy Sĩ và thiết kế
+                        tinh tế. Với bộ máy Automatic chính xác, mặt số Chronograph đa chức năng, đây là phụ kiện không
+                        thể thiếu cho người đàn ông hiện đại.
                         <br />
-                        - Sen trung, size 10-12cm
+                        - Đường kính mặt: 40mm
                         <br />
-                        - Tuổi: Trên 10 tháng
+                        - Độ dày: 12mm
                         <br />
-                        - Cây kèm bầu đất & chậu nhựa mỏng từ nhà vườn
+                        - Chất liệu: Thép không gỉ 316L
                         <br />
-                        - Xuất sứ: Đà Lạt
+                        - Mặt kính: Sapphire chống trầy
                         <br />
-                        - Hàng được sản xuất theo tiêu chuẩn độc quyền.
+                        - Chống nước: 5ATM
                         <div className="mt-2">
-                            <h5 className="font-semibold text-gray-700">HƯỚNG DẪN XỬ LÝ KHI MỚI MUA VỀ:</h5>
-                            Trước khi chuyển hàng, sen đã được ngừng tưới 3-4 ngày để tránh tình trạng sốc nhiệt/
-                            úng rễ khi gửi hàng xa. Vì thế khi nhận hàng bạn cần lưu ý các bước xử lý sau: <br />
-                            <b>1.</b> Đối với những vùng có khí hậu núi cao tương tự Đà Lạt như Khu vực Tây Nguyên,
-                            Sơn La, Mộc Châu... Bạn có thể mang trồng và tưới nước luôn không cần xử lý gì cả. Chỉ
-                            khoảng 5-7 ngày là cây sẽ phát rễ và lớn rất nhanh <br />
-                            <b>2.</b> Đối với các vùng khí hậu nóng/ nhiệt đới: Sài Gòn, các tỉnh Miền Tây, khu vực
-                            Nam - Trung bộ.... bạn cần làm theo các bước sau:
+                            <h5 className="font-semibold text-gray-700">ĐẶC ĐIỂM NỔI BẬT:</h5>
+                            - Bộ máy Automatic Thụy Sĩ chính xác, tích hợp chức năng Chronograph
+                            <br />
+                            - Dây da cao cấp chống thấm nước, không bong tróc theo thời gian
+                            <br />
+                            - Mặt kính Sapphire chống trầy xước, độ trong suốt cao
+                            <br />
+                            - Thiết kế mặt số tối giản nhưng đầy tinh tế với kim dạ quang
                         </div>
                         <div className="mt-2">
+                            <h5 className="font-semibold text-gray-700">HƯỚNG DẪN SỬ DỤNG:</h5>
                             <ul className="list-disc pl-5">
                                 <li>
-                                    Bước 1: Rũ bỏ giá thể cũ (có thể lấy vòi nước mạnh xịt cho bong giá thể). Tỉa các
-                                    rễ nhỏ, cắt rễ lớn còn lại khoảng 2cm tính từ gốc
+                                    Đồng hồ Automatic hoạt động bằng chuyển động cổ tay, nếu không đeo thường xuyên
+                                    cần lên dây cót thủ công
                                 </li>
                                 <li>
-                                    Bước 2: Để chỗ mát tránh ánh nắng trực tiếp khoảng 3 ngày cho vết cắt khô lại, tránh
-                                    nhiễm trùng
+                                    Tránh tiếp xúc với từ trường mạnh và nhiệt độ cao
                                 </li>
                                 <li>
-                                    Bước 3: Chuẩn bị giá thể (ưu tiên các loại giá thể chuyên dụng), tưới lượng nước
-                                    nhỏ đủ ẩm
+                                    Không điều chỉnh lịch/giờ khi đồng hồ ở vị trí từ 21h-3h
                                 </li>
-                                <li>Bước 4: Đặt cây vào và phủ đất kín phần rễ cây</li>
+                                <li>Vệ sinh dây da bằng vải mềm khô, tránh ngâm nước lâu</li>
                                 <li>
-                                    Bước 5: Đặt cây vào chỗ thoáng mát (không đặt trong phòng điều hòa), tránh ánh nắng
-                                    trực tiếp, không được di chuyển chậu hoặc lay gốc trong thời gian này
-                                </li>
-                                <li>
-                                    Bước 6: Sau 2 tuần, khi thấy phần ngọn đã bắt đầu có dấu hiệu phát triển và lay nhẹ
-                                    thấy phần gốc đã bám vào giá thể. Bạn có thể từ từ cho cây ra nắng và bắt đầu tưới
-                                    nước bình thường.
+                                    Bảo dưỡng định kỳ 2-3 năm/lần tại trung tâm bảo hành chính hãng
                                 </li>
                             </ul>
                         </div>
                         <div className="mt-2">
-                            <h5 className="font-semibold text-gray-700">BLOOM CAM KẾT:</h5>
+                            <h5 className="font-semibold text-gray-700">TIMEX CAM KẾT:</h5>
                             <ul className="list-disc pl-5">
-                                <li>100% Hình ảnh do đội ngũ Bloom tự sản xuất</li>
-                                <li>Sản phẩm định lượng, đúng kích thước, đúng màu sắc</li>
-                                <li>Giao hàng trên Toàn Quốc</li>
-                                <li>Hàng có sẵn, giao ngay khi nhận đơn.</li>
-                                <li>Hỗ trợ đổi trả theo quy định của Shopee</li>
+                                <li>100% chính hãng, nguyên seal</li>
+                                <li>Bảo hành chính hãng 5 năm toàn cầu</li>
+                                <li>Miễn phí giao hàng toàn quốc</li>
+                                <li>Đổi trả trong 7 ngày nếu lỗi nhà sản xuất</li>
+                                <li>Hỗ trợ trả góp 0% qua thẻ tín dụng</li>
                             </ul>
-                            <h5 className="font-semibold text-gray-700 mt-2">VỀ BLOOM</h5>
-                            Về Bloom: Bloom là đại lý phân phối các sản phẩm giá thể, cây mini, phân thuốc liên
-                            quan đặc biệt phù hợp cho các khu vườn thành phố, vườn ban công... Mọi sản phẩm của
-                            Bloom đều được đảm bảo đáp ứng chất lượng theo chuẩn cao nhất của ngành hàng.
+                            <h5 className="font-semibold text-gray-700 mt-2">VỀ TIMEX</h5>
+                            TIMEX là thương hiệu đồng hồ cao cấp đến từ Thụy Sĩ với hơn 150 năm kinh nghiệm. Mỗi chiếc
+                            đồng hồ TIMEX đều được chế tác thủ công với độ chính xác tuyệt đối, là biểu tượng của đẳng
+                            cấp và phong cách sống sang trọng.
                         </div>
                     </p>
                 </div>
             </section>
-
-
         </main>
     );
 };
