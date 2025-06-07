@@ -18,6 +18,7 @@ import BrandList from "./pages/admin/Brands/BrandsList";
 import BrandCreate from "./pages/admin/Brands/BrandCreate";
 import ProductCreate from "./pages/admin/Products/ProductCreate";
 import ProductDetail from "./pages/admin/Products/ProductDetail";
+import UserCreate from "./pages/admin/Users/UserCreate";
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
           <Route path="brands/create" element={<BrandCreate />} />
           <Route path="products/create" element={<ProductCreate />} />
           <Route path="products/:id" element={<ProductDetail />} />
-
+          <Route path="users/create" element={<UserCreate />} />
         </Route>
       </Routes>
     </Router>

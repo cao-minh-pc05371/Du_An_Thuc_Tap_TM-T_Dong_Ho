@@ -1,0 +1,19 @@
+.admin-layout {
+  min-height: 100vh;
+}
+
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header {
+  background-color: #fff;
+  z-index: 1000;
+}
+
+.admin-footer {
+  font-size: 0.85rem;
+  color: #6c757d;
+}

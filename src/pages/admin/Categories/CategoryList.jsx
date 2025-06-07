@@ -61,13 +61,13 @@ const CategoryList = () => {
   );
 
   return (
-    <div className="pm-container container py-5">
-      <div className="d-flex justify-content-between align-items-center mb-4">
+    <div className="pm-container container py-4">
+      <div className="d-flex justify-content-between align-items-center mb-2">
         <h1 className="pm-title">Quản lý danh mục</h1>
       </div>
 
       {/* Form tìm kiếm */}
-      <div className="search-card mb-4">
+      <div className="search-card mb-3">
         <div className="row g-3">
           <div className="col-md-6">
             <label className="form-label">Tìm theo tên danh mục</label>

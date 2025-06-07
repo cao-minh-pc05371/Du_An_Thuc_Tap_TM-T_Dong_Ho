@@ -130,13 +130,6 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-
-      <hr className="my-3" />
-      <Link to="/logout" className="sidebar-link text-danger d-flex align-items-center gap-2 px-3 py-2">
-        <FiLogOut className="sidebar-icon" />
-        <span>Đăng xuất</span>
-      </Link>
-
     </div>
   );
 };

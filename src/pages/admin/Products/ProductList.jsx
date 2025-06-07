@@ -34,13 +34,13 @@ const ProductManagement = () => {
   });
 
   return (
-    <div className="pm-container container py-5">
-      <div className="d-flex justify-content-between align-items-center mb-4">
+    <div className="pm-container container py-4">
+      <div className="d-flex justify-content-between align-items-center mb-2">
         <h1 className="pm-title">Quản lý sản phẩm</h1>
       </div>
 
       {/* Form tìm kiếm */}
-      <div className="card p-3 mb-4">
+      <div className="card p-3 mb-3">
         <div className="row g-2 align-items-end">
           <div className="col-md-5">
             <label className="form-label">Tìm theo tên hoặc thương hiệu</label>
