@@ -17,8 +17,6 @@
     "@mui/material": "^7.1.1",
     "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/line-clamp": "^0.4.4",
-    "@tailwindcss/vite": "^4.1.8",
-    "bootstrap": "^5.3.6",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -27,8 +25,7 @@
     "react-router-dom": "^7.6.1",
     "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5",
-    "slick-carousel": "^1.8.1",
-    "tailwind-scrollbar": "^4.0.2"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
@@ -43,7 +40,8 @@
     "postcss": "^8.5.4",
     "sass": "^1.89.1",
     "sass-embedded": "^1.89.1",
-    "tailwindcss": "^4.1.8",
+    "tailwind-scrollbar": "^3.1.0",
+    "tailwindcss": "^3.3.5",
     "vite": "^6.3.5"
   }
 }

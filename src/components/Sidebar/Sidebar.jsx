@@ -1,17 +1,21 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   FiBox, FiTag, FiLayers, FiUsers, FiSettings,
   FiBarChart2, FiShoppingCart, FiMessageSquare,
-  FiEdit, FiLogOut
+  FiEdit
 } from "react-icons/fi";
-import "./Sidebar.css";
 
 const Sidebar = () => {
   const location = useLocation();
+  const [openMenuId, setOpenMenuId] = useState(null);
 
-  // Hàm kiểm tra active chính xác
   const isActive = (path, exact = false) =>
     exact ? location.pathname === path : location.pathname.startsWith(path);
+
+  const toggleMenu = (id) => {
+    setOpenMenuId((prevId) => (prevId === id ? null : id));
+  };
 
   const singleSections = [
     { id: "Overview", title: "Thống kê", to: "/admin", icon: <FiBarChart2 /> },
@@ -76,61 +80,82 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="sidebar-wrapper">
-      <h4 className="sidebar-title">Quản lý hệ thống</h4>
+    <aside className="w-[280px] min-h-screen bg-white px-4 py-6 border-r shadow-sm">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 tracking-wide">Quản lý hệ thống</h2>
 
-      {/* Các mục không có submenu */}
-      {singleSections.map((item) => (
-        <div className="accordion-item sidebar-section" key={item.id}>
-          <h2 className="accordion-header">
-            <Link to={item.to} className={`accordion-button sidebar-btn no-toggle ${isActive(item.to, true) ? "active" : ""}`}>
-              <span className="sidebar-icon">{item.icon}</span>
-              {item.title}
-            </Link>
-          </h2>
-        </div>
-      ))}
+      {/* Static Sections */}
+      <nav className="space-y-1">
+        {singleSections.map((item) => (
+          <Link
+            key={item.id}
+            to={item.to}
+            className={`no-underline flex items-center gap-3 px-4 py-2 rounded-lg text-[15px] font-medium transition duration-150 ${
+              isActive(item.to, true)
+                ? "text-blue-600 bg-blue-50"
+                : "text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+            }`}
+          >
+            <span className="text-[17px]">{item.icon}</span>
+            {item.title}
+          </Link>
+        ))}
+      </nav>
 
-      {/* Các mục có submenu */}
-      <div className="accordion" id="sidebarAccordion">
-        {collapsibleSections.map((section) => (
-          <div className="accordion-item sidebar-section" key={section.id}>
-            <h2 className="accordion-header">
+      {/* Collapsible Sections */}
+      <div className="mt-6 space-y-3">
+        {collapsibleSections.map((section) => {
+          const isOpen =
+            openMenuId === section.id ||
+            section.links.some((link) => isActive(link.to, true));
+
+          return (
+            <div key={section.id}>
               <button
-                className="accordion-button collapsed sidebar-btn"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target={`#collapse${section.id}`}
-                aria-expanded={section.links.some(link => isActive(link.to, true))}
+                onClick={() => toggleMenu(section.id)}
+                className={`w-full flex items-center justify-between px-4 py-2 rounded-lg text-white text-[15px] font-semibold transition duration-200 ${
+                  isOpen ? "bg-blue-700" : "bg-blue-800 hover:bg-blue-700"
+                }`}
               >
-                <span className="sidebar-icon">{section.icon}</span>
-                {section.title}
+                <div className="flex items-center gap-3">
+                  <span className="text-[17px]">{section.icon}</span>
+                  {section.title}
+                </div>
+                <svg
+                  className={`w-4 h-4 transform transition-transform ${
+                    isOpen ? "rotate-90" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
               </button>
-            </h2>
-            <div
-              id={`collapse${section.id}`}
-              className={`accordion-collapse collapse ${section.links.some(link => isActive(link.to, true)) ? "show" : ""}`}
-              data-bs-parent="#sidebarAccordion"
-            >
-              <div className="accordion-body py-1">
-                <ul className="nav flex-column ms-3 small">
+
+              {isOpen && (
+                <ul className="pl-8 mt-1 border-l-2 border-blue-200 space-y-1">
                   {section.links.map((link) => (
                     <li key={link.to}>
                       <Link
                         to={link.to}
-                        className={`nav-link sidebar-link ${isActive(link.to, true) ? "active" : ""}`}
+                        className={`no-underline block px-3 py-1.5 rounded-md text-sm font-medium transition duration-150 ${
+                          isActive(link.to, true)
+                            ? "text-blue-700 bg-blue-50"
+                            : "text-blue-900 hover:bg-blue-100"
+                        }`}
                       >
                         {link.label}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-    </div>
+    </aside>
   );
 };
 

@@ -3,17 +3,24 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import HeaderAdmin from "../components/HeaderAdmin/HeaderAdmin";
 import FooterAdmin from "../components/FooterAdmin/FooterAdmin";
 import { Outlet } from "react-router-dom";
-import "./AdminLayout.css";
 
 const AdminLayout = () => {
   return (
-    <div className="admin-layout d-flex">
+    <div className="flex min-h-screen bg-gray-100">
+      {/* Sidebar bên trái */}
       <Sidebar />
-      <div className="main-content flex-grow-1 d-flex flex-column">
+
+      {/* Nội dung chính */}
+      <div className="flex flex-col flex-grow">
+        {/* Header */}
         <HeaderAdmin />
-        <main className="flex-grow-1 p-3 bg-light">
+
+        {/* Main content */}
+        <main className="flex-grow p-4">
           <Outlet />
         </main>
+
+        {/* Footer */}
         <FooterAdmin />
       </div>
     </div>
